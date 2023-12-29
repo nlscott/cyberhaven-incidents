@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "lib/cyberhaven/incidents/version"
+require_relative "lib/cyberhaven/incidents/id"
 
 Gem::Specification.new do |spec|
   spec.name = "cyberhaven-incidents"
