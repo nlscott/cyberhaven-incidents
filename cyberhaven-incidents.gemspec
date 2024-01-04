@@ -2,6 +2,8 @@
 
 require_relative "lib/cyberhaven/incidents/version"
 require_relative "lib/cyberhaven/incidents/id"
+require_relative "lib/cyberhaven/incidents/user"
+
 
 Gem::Specification.new do |spec|
   spec.name = "cyberhaven-incidents"

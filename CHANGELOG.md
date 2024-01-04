@@ -1,6 +1,16 @@
+
+## 0.4.0
+ADD:
+- add user module
+
+## 0.3.1
+ADD:
+- add json and yaml output formats for detailed view
+
+
 ## 0.3.0
 ADD:
-- add json and yaml output formats
+- add json and yaml output formats for summary view
 
 ## 0.2.5
 ADD:

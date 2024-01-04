@@ -8,6 +8,7 @@ require 'openssl'
 require 'base64'
 require_relative "incidents/version"
 require_relative "incidents/id"
+require_relative "incidents/user"
 
 module Cyberhaven
   module Incidents
