@@ -1,38 +1,31 @@
 
 ## 0.4.0
-ADD:
-- add user module
+Add: add user incidenetss for status and number of events
 
 ## 0.3.1
-ADD:
-- add json and yaml output formats for detailed view
+Add: add json and yaml output formats for detailed view
 
 
 ## 0.3.0
-ADD:
-- add json and yaml output formats for summary view
+Add: add json and yaml output formats for summary view
 
 ## 0.2.5
-ADD:
-- incident totals
+Add: incident totals for status'
+
 
 ## 0.2.4
-ADD:
-- output in raw json
+Add: output in raw json
 
 ## 0.2.3
-ADD:
-- split incident by ID into id.rb
+Add: split incident by ID into id.rb
 
 ## 0.2.2
-ADD:
-- get incident detailed
-- get incident summary
+Add: get incident details (verbose raw output)
+Add: get incident summary (formatted output)
 
 
 ## 0.2.0
-ADD:
-- get incident details by incident id
+Add: get incident details by incident id
 
 
 ## 0.1.0
