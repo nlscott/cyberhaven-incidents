@@ -2,7 +2,7 @@
 
 
 ## Summary
-a ruby gem to interact with the Cyberhaven incident API. Tested on Cyberhaven version 23.11.
+A ruby gem to interact with the Cyberhaven incident API. Tested on Cyberhaven version 23.11.
 
 ---
 ## Installation
