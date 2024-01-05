@@ -5,38 +5,53 @@ module Cyberhaven
   module Incidents
     module User
         ## DETAILED VERBOSE ----------------------------------------------------
-        def self.DetailedRaw(username, status)
-            $query ={
-                "filters":{
-                    "resolution_statuses": [
-                        "#{status}"
-                    ],
-                    "users": [
-                        "#{username}"
-                    ],
-                },
-                "sort_by": "event_time",
-                "page_size": 1,
-                "sort_desc": true
-            }.to_json
-    
-            url = URI("https://#{$deployment}/api/rest/v1/incidents/list")
-            https = Net::HTTP.new(url.host, url.port)
-            https.use_ssl = true
-            request = Net::HTTP::Get.new(url)
-            request["Content-Type"] = "application/json"
-            request["Authorization"] = "Bearer #{$bearerToken}"
-            request.body = $query
-            response = https.request(request)
-            status = response.code
-            results = JSON.parse(response.read_body)
+        def self.DetailedRaw(username, status, numberOfEvents)
+            
+            $pageToken = "1"
+            loop do
+                unless $pageToken.empty?
+        
+                    if $pageToken == "1"
+                        $pageToken = ""
+                    end
 
-            $data = results["incidents"]
+                    $query ={
+                        "filters":{
+                            "resolution_statuses": [
+                                "#{status}"
+                            ],
+                            "users": [
+                                "#{username}"
+                            ],
+                        },
+                        "sort_by": "event_time",
+                        "page_size": numberOfEvents,
+                        "sort_desc": true
+                    }.to_json
+            
+                    url = URI("https://#{$deployment}/api/rest/v1/incidents/list")
+                    https = Net::HTTP.new(url.host, url.port)
+                    https.use_ssl = true
+                    request = Net::HTTP::Get.new(url)
+                    request["Content-Type"] = "application/json"
+                    request["Authorization"] = "Bearer #{$bearerToken}"
+                    request.body = $query
+                    response = https.request(request)
+                    status = response.code
+                    results = JSON.parse(response.read_body)
+
+                    pageToken = results["next_page_id"]
+                    $data = results["incidents"]
+                    return $data
+                else
+                    break
+                end
+            end
         end
 
-        def self.DetailedJson(username, status)
-            DetailedRaw("#{username}", "#{status}" )
-            puts $data.to_json
+        def self.DetailedJson(username, status, numberOfEvents)
+            DetailedRaw("#{username}", "#{status}", numberOfEvents)
+            return $data.to_json
         end
 
         # def self.DetailedYaml(incidentID)
