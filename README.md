@@ -39,14 +39,14 @@ Cyberhaven::Incidents::totalInProgressIncidents
 Cyberhaven::Incidents::totalResolvedIncidents
 
 ## Detailed Incident details by ID
-Cyberhaven::Incidents::Id::DetailedJson("#{incidentID}")
-Cyberhaven::Incidents::Id::DetailedYaml("#{incidentID}")
-Cyberhaven::Incidents::Id::DetailedReport("#{incidentID}")
+Cyberhaven::Incidents::Id::DetailedJson("incidentID")
+Cyberhaven::Incidents::Id::DetailedYaml("incidentID")
+Cyberhaven::Incidents::Id::DetailedReport("incidentID")
 
 ## Summaried Incidents details by ID
-Cyberhaven::Incidents::Id::SummaryJson("#{incidentID}")
-Cyberhaven::Incidents::Id::SummaryYaml("#{incidentID}")
-Cyberhaven::Incidents::Id::SummaryReport("#{incidentID}")
+Cyberhaven::Incidents::Id::SummaryJson("incidentID")
+Cyberhaven::Incidents::Id::SummaryYaml("incidentID")
+Cyberhaven::Incidents::Id::SummaryReport("incidentID")
 
 ## Incident details by user
 puts Cyberhaven::Incidents::User::DetailedRaw("username", "status", numberOfEvents)
