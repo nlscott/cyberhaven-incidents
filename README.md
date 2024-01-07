@@ -49,13 +49,11 @@ Cyberhaven::Incidents::Id::SummaryYaml("incidentID")
 Cyberhaven::Incidents::Id::SummaryReport("incidentID")
 
 ## Incident details by user
-puts Cyberhaven::Incidents::User::DetailedRaw("username", "status", numberOfEvents)
-puts Cyberhaven::Incidents::User::DetailedJson("username", "status", numberOfEvents)
-
-#example
-puts Cyberhaven::Incidents::User::DetailedJson("joedaily", "unresolved", 100)
-
-• status options are: "ignored", "in_progress", "resolved", or "unresolved"
+puts Cyberhaven::Incidents::User::TotalIncidents("username")
+puts Cyberhaven::Incidents::User::AllIncidents("username")
+Cyberhaven::Incidents::User::AllIncidentsCSV("username")
+puts Cyberhaven::Incidents::User::AllIncidentsJson("username")
+puts Cyberhaven::Incidents::User::AllIncidentsYaml("username")
 ```
 
 ---
