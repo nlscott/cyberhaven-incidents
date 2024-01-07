@@ -1,4 +1,8 @@
 
+## 0.4.1
+Add: add user civ
+Fixed: pagination on user events
+
 ## 0.4.0
 Add: add user incidenetss for status and number of events
 
