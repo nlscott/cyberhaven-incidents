@@ -9,6 +9,7 @@ require 'base64'
 require_relative "incidents/version"
 require_relative "incidents/id"
 require_relative "incidents/user"
+require_relative "incidents/policy"
 
 module Cyberhaven
   module Incidents

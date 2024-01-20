@@ -1,6 +1,9 @@
 
+## 0.5.0
+Add: Add incidents by policy name
+
 ## 0.4.1
-Add: add user civ
+Add: add user csv export
 Fixed: pagination on user events
 
 ## 0.4.0
