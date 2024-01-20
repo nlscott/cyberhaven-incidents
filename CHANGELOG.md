@@ -1,6 +1,8 @@
 
 ## 0.5.0
-Add: Add incidents by policy name
+Add: Add incidents by policy name (CSV, Json, Yaml)
+
+
 
 ## 0.4.1
 Add: add user csv export

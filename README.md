@@ -51,9 +51,16 @@ Cyberhaven::Incidents::Id::SummaryReport("incidentID")
 ## Incident details by user
 puts Cyberhaven::Incidents::User::TotalIncidents("username")
 puts Cyberhaven::Incidents::User::AllIncidents("username")
-Cyberhaven::Incidents::User::AllIncidentsCSV("username")
 puts Cyberhaven::Incidents::User::AllIncidentsJson("username")
 puts Cyberhaven::Incidents::User::AllIncidentsYaml("username")
+Cyberhaven::Incidents::User::AllIncidentsCSV("username")
+
+## Incident details by policy name
+puts Cyberhaven::Incidents::Policy::TotalPolicyIncidents("policyName")
+puts Cyberhaven::Incidents::Policy::AllIncidents("policyName")
+puts Cyberhaven::Incidents::Policy::AllIncidentsJson("policyName")
+puts Cyberhaven::Incidents::Policy::AllIncidentsYaml("policyName")
+Cyberhaven::Incidents::Policy::AllIncidentsCSV("policyName")
 ```
 
 ---
