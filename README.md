@@ -38,12 +38,12 @@ Cyberhaven::Incidents::totalIgnoredIncidents
 Cyberhaven::Incidents::totalInProgressIncidents
 Cyberhaven::Incidents::totalResolvedIncidents
 
-## Detailed Incident details by ID
+## Detailed Incident by ID
 Cyberhaven::Incidents::Id::DetailedJson("incidentID")
 Cyberhaven::Incidents::Id::DetailedYaml("incidentID")
 Cyberhaven::Incidents::Id::DetailedReport("incidentID")
 
-## Summaried Incidents details by ID
+## Summarized Incident details by ID
 Cyberhaven::Incidents::Id::SummaryJson("incidentID")
 Cyberhaven::Incidents::Id::SummaryYaml("incidentID")
 Cyberhaven::Incidents::Id::SummaryReport("incidentID")
@@ -51,9 +51,16 @@ Cyberhaven::Incidents::Id::SummaryReport("incidentID")
 ## Incident details by user
 puts Cyberhaven::Incidents::User::TotalIncidents("username")
 puts Cyberhaven::Incidents::User::AllIncidents("username")
-Cyberhaven::Incidents::User::AllIncidentsCSV("username")
 puts Cyberhaven::Incidents::User::AllIncidentsJson("username")
 puts Cyberhaven::Incidents::User::AllIncidentsYaml("username")
+Cyberhaven::Incidents::User::AllIncidentsCSV("username")
+
+## Incident details by policy name
+puts Cyberhaven::Incidents::Policy::TotalPolicyIncidents("policyName")
+puts Cyberhaven::Incidents::Policy::AllIncidents("policyName")
+puts Cyberhaven::Incidents::Policy::AllIncidentsJson("policyName")
+puts Cyberhaven::Incidents::Policy::AllIncidentsYaml("policyName")
+Cyberhaven::Incidents::Policy::AllIncidentsCSV("policyName")
 ```
 
 ---

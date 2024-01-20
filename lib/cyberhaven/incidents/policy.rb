@@ -7,8 +7,8 @@ require 'csv'
 
 module Cyberhaven
   module Incidents
-    module User
-        def self.TotalIncidents(username)
+    module Policy
+        def self.TotalPolicyIncidents(policyName)
             
             $pageToken = "1"
             loop do
@@ -20,11 +20,8 @@ module Cyberhaven
 
                     $query ={
                         "filters":{
-                            # "resolution_statuses": [
-                            #     "#{status}"
-                            # ],
-                            "users": [
-                                "#{username}"
+                            "category_names": [
+                                "#{policyName}"
                             ],
                         },
                         "sort_by": "event_time",
@@ -50,7 +47,7 @@ module Cyberhaven
             end
         end
         
-        def self.AllIncidentsResults(username)
+        def self.AllIncidentsResults(policyName)
 
             $incidentArray = []
             
@@ -67,8 +64,8 @@ module Cyberhaven
                             "resolution_statuses":[
                                 "unresolved", "ignored", "in_progress", "resolved"
                             ],
-                            "users": [
-                                "#{username}"
+                            "category_names": [
+                                "#{policyName}"
                             ],
                         },
                         "sort_by": "event_time",
@@ -98,16 +95,16 @@ module Cyberhaven
             end
         end
 
-        def self.AllIncidents(username)
-            AllIncidentsResults("#{username}")
+        def self.AllIncidents(policyName)
+            AllIncidentsResults("#{policyName}")
             return $incidentArray
         end
 
-        def self.AllIncidentsCSV(username)
+        def self.AllIncidentsCSV(policyName)
             now_date = DateTime.now
             datetime = now_date.strftime('%Y%m%d')
             $currentUser = ENV['USER']
-            $reportPath="/Users/#{$currentUser}/Desktop/#{datetime}_#{username}_report.csv"
+            $reportPath="/Users/#{$currentUser}/Desktop/#{datetime}_#{policyName}_report.csv"
     
             $pageToken = "1"
             $incidentArray = []
@@ -124,8 +121,8 @@ module Cyberhaven
                             "resolution_statuses":[
                                 "unresolved", "ignored", "in_progress", "resolved"
                             ],
-                            "users": [
-                                "#{username}"
+                            "category_names": [
+                                "#{policyName}"
                             ],
                         },
                         "page_id": "#{$pageToken}",
@@ -242,13 +239,13 @@ module Cyberhaven
             puts "Finished writting report: #{$reportPath}"
         end
     
-        def self.AllIncidentsJson(username)
-            AllIncidentsResults("#{username}")
+        def self.AllIncidentsJson(policyName)
+            AllIncidentsResults("#{policyName}")
             return $incidentArray.to_json
         end
 
-         def self.AllIncidentsYaml(incidentID)
-            AllIncidentsResults("#{incidentID}")
+         def self.AllIncidentsYaml(policyName)
+            AllIncidentsResults("#{policyName}")
             return $incidentArray.to_yaml
         end
 
