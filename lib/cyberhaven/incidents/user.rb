@@ -3,7 +3,7 @@
 
 require 'etc'
 require 'csv'
-require "set"
+# require "set"
 
 
 module Cyberhaven
@@ -156,6 +156,7 @@ module Cyberhaven
                         "Event Time" => "#{item["event_time"]}",
                         "Trigger Time" => "#{item["trigger_time"]}",
                         "ID" => "#{item["id"]}",
+                        "Incident Risk Score" => "#{item["risk_score"]}",
                         "Policy Name" => "#{item["category"]["name"]}",
                         "Policy Severity" => "#{item["category"]["severity"]}",
                         "User" => "#{item["user"]}",
